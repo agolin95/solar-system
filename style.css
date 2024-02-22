@@ -1,0 +1,18 @@
+html {
+    background-color: black;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 200px;
+}
+
+.planet {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 100%;
+    margin: auto;
+}
