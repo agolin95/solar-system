@@ -11,13 +11,9 @@ $(function () {
     let neptune = new Planet("Neptune", 15299.4, 30.1, "#446afc").draw();
     let pluto = new Planet("Pluto", 715.2, 39.5, "#b3aa9e").draw();
 
-    $(".play-music").on("click", function () {
-        document.getElementById("nightbus").play();
-        $(".music-control").toggle();
-    });
-
-    $(".pause-music").on("click", function () {
-        document.getElementById("nightbus").pause();
+    $(".music-control").on("click", function () {
+        let elem = document.getElementById("nightbus");
+        elem.paused ? elem.play() : elem.pause();
         $(".music-control").toggle();
     });
 });
