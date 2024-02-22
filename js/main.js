@@ -12,7 +12,7 @@ $(function () {
     let pluto = new Planet("Pluto", 715.2, 39.5, "#b3aa9e").draw();
 
     $(".music-control").on("click", function () {
-        let elem = document.getElementById("nightbus");
+        const elem = document.getElementById("nightbus");
         elem.paused ? elem.play() : elem.pause();
         $(".music-control").toggle();
     });
