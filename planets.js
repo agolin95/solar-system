@@ -62,7 +62,12 @@ class Planet {
 
         let element = this.id;
         $(`.${this.id}.sidebarplanet`).click(function () {
-            document.getElementById(element).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            // document.getElementById(element).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            let target = $(`#${element}`)
+            $('html').animate({
+                scrollTop: target.offset().top - (window.screen.height / 2.5)
+            }, 2000);
+
         });
     }
 }
