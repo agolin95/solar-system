@@ -14,7 +14,7 @@ $(function () {
 });
 
 class Planet {
-    // Radius in miles, orbit in AU
+    // radius in miles, orbit in AU
     constructor(name, radius, orbit, color) {
         this.name = name;
         this.id = this.name.toLowerCase();
@@ -30,9 +30,13 @@ class Planet {
     }
 
     draw() {
+        this.#drawPlanet();
+        this.#drawShortcut();
+    }
+
+    #drawPlanet() {
         let top = `calc(${this.orbit - this.radius}px)`;
         let left = `calc(50vw - ${this.radius}px)`;
-
         let planetDOM = `
         <div id="${this.id}" class="planetwrap" style="top: ${top};">
             <div class="planet"></div>
@@ -40,13 +44,25 @@ class Planet {
         </div>
         `
         $(".space").append(planetDOM);
-
         $(`#${this.id}>.planet`).css({
             // "background-image": `url(${this.picture})`,
             "background-color": `${this.color}`,
             "height": `${this.diameter}`,
             "width": `${this.diameter}`,
             "left": `${left}`
-        })
+        });
+    }
+
+    #drawShortcut() {
+        let sidebarDOM = `<li class="${this.id} sidebarplanet">${this.name.charAt(0)}</li>`
+        $("#sidebar>ul").append(sidebarDOM);
+        $(`.${this.id}.sidebarplanet`).css({
+            "background-color": `${this.color}`,
+        });
+
+        let element = this.id;
+        $(`.${this.id}.sidebarplanet`).click(function () {
+            document.getElementById(element).scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        });
     }
 }
