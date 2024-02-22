@@ -1,10 +1,11 @@
 class Planet {
     // radius in miles, orbit in AU
-    constructor(name, radius, orbit, color) {
+    constructor(name, radius, orbit, color, type) {
         this.name = name;
         this.id = this.name.toLowerCase();
+        this.type = type;
 
-        this.scalefactor = 2000;
+        this.scalefactor = 1079.6;
         this.radius = radius / this.scalefactor;
         this.diameter = this.radius * 2
         this.orbit = (orbit * 92955807.3) / this.scalefactor;
@@ -16,7 +17,9 @@ class Planet {
 
     draw() {
         this.#drawPlanet();
-        this.#drawShortcut();
+        if (this.type != "Moon") {
+            this.#drawShortcut();
+        }
     }
 
     #drawPlanet() {
@@ -44,6 +47,14 @@ class Planet {
         $(`.${this.id}.sidebarplanet`).css({
             "background-color": `${this.color}`,
         });
+
+        if (this.type == "Dwarf") {
+            $(`.${this.id}.sidebarplanet`).css({
+                "height": "5px",
+                "width": "5px",
+                "font-size": "5px"
+            });
+        }
 
         let element = this.id;
         $(`.${this.id}.sidebarplanet`).click(function () {
