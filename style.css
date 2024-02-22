@@ -5,14 +5,60 @@ html {
     text-align: center;
 }
 
-.header {
-    margin-bottom: 200px;
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
-.planet {
+.header {
+    margin-bottom: 300px;
+}
+
+.space {
+    position: absolute;
+}
+
+
+.planetwrap {
+    width: 100vw;
+    position: absolute;
+}
+
+.planetwrap>.planet {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     border-radius: 100%;
-    margin: auto;
+    position: relative;
+}
+
+.planetwrap>h3 {
+    font-weight: 100;
+    font-size: 100px;
+    margin-top: 0px;
+}
+
+#sidebar {
+    background: #111;
+    position: fixed;
+    border-radius: 10px;
+    text-align: left;
+    border-radius: 0px 10px 10px 0;
+    top: calc(10vh)
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebar li:hover {
+    color: gray;
+    text-decoration: underline;
 }
