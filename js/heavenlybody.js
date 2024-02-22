@@ -1,9 +1,8 @@
-class Planet {
+class HeavenlyBody {
     // radius in miles, orbit in AU
-    constructor(name, radius, orbit, color, type) {
+    constructor(name, radius, orbit, color) {
         this.name = name;
         this.id = this.name.toLowerCase();
-        this.type = type;
 
         this.scalefactor = 1079.6;
         this.radius = radius / this.scalefactor;
@@ -15,20 +14,12 @@ class Planet {
         this.icon = `img/icons/${this.id}.png`;
     }
 
-    draw() {
-        this.#drawPlanet();
-        if (this.type != "Moon") {
-            this.#drawShortcut();
-        }
-    }
-
-    #drawPlanet() {
+    drawBody() {
         let top = `calc(${this.orbit - this.radius}px)`;
         let left = `calc(50vw - ${this.radius}px)`;
         let planetDOM = `
         <div id="${this.id}" class="planetwrap" style="top: ${top};">
             <div class="planet"></div>
-            <h3 style="color:${this.color};">${this.name}</h3>
         </div>
         `
         $(".space").append(planetDOM);
@@ -41,20 +32,20 @@ class Planet {
         });
     }
 
-    #drawShortcut() {
+    drawLabel() {
+        let labelDOM = `<h3 style="color:${this.color};">${this.name}</h3>`;
+        $(`#${this.id}`).append(labelDOM);
+    }
+
+    drawShortcut(size) {
         let sidebarDOM = `<li class="${this.id} sidebarplanet">${this.name.charAt(0)}</li>`
         $("#sidebar>ul").append(sidebarDOM);
         $(`.${this.id}.sidebarplanet`).css({
             "background-color": `${this.color}`,
+            "height": `${size}`,
+            "width": `${size}`,
+            "font-size": `${size}`
         });
-
-        if (this.type == "Dwarf") {
-            $(`.${this.id}.sidebarplanet`).css({
-                "height": "5px",
-                "width": "5px",
-                "font-size": "5px"
-            });
-        }
 
         let element = this.id;
         $(`.${this.id}.sidebarplanet`).click(function () {
