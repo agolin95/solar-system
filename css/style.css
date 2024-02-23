@@ -1,0 +1,54 @@
+html {
+    background-color: black;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+
+    /* iOS Safari */
+    -webkit-touch-callout: none;
+    /* Safari */
+    -webkit-user-select: none;
+    /* Konqueror HTML */
+    -khtml-user-select: none;
+    /* Old versions of Firefox */
+    -moz-user-select: none;
+    /* Internet Explorer/Edge */
+    -ms-user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    user-select: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    margin-bottom: 250px;
+}
+
+.space {
+    position: absolute;
+}
+
+
+.body-wrap {
+    width: 100vw;
+    position: absolute;
+}
+
+.body-wrap>.body {
+    border-radius: 100%;
+    position: relative;
+}
+
+.body-wrap>h3 {
+    font-weight: 100;
+    font-size: 80px;
+    margin-top: 0px;
+}
+
+.moon>h3 {
+    font-size: 30px;
+}

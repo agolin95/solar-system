@@ -4,9 +4,11 @@ class Planet extends HeavenlyBody {
     }
 
     draw() {
+        this.drawWrapper();
         this.drawBody();
         this.drawLabel();
-        this.drawShortcut("10px");
+        this.drawShortcut();
+        $(`.${this.id}`).addClass("planet");
     }
 }
 
@@ -17,8 +19,10 @@ class Moon extends HeavenlyBody {
     }
 
     draw() {
+        this.drawWrapper();
         this.drawBody();
         this.drawLabel();
+        $(`.${this.id}`).addClass("moon");
     }
 }
 
@@ -28,9 +32,11 @@ class Dwarf extends HeavenlyBody {
         super(name, radius, orbit, color);
     }
     draw() {
+        this.drawWrapper();
         this.drawBody();
         this.drawLabel();
-        this.drawShortcut("5px");
+        this.drawShortcut();
+        $(`.${this.id}`).addClass("dwarf");
     }
 }
 
@@ -40,6 +46,8 @@ class Rings extends HeavenlyBody {
     }
 
     draw() {
+        this.drawWrapper();
         this.drawBody();
+        $(`.${this.id}`).addClass("rings");
     }
 }

@@ -1,0 +1,26 @@
+.music {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.music-control {
+    margin: 0px;
+}
+
+.pause-music {
+    display: none;
+}
+
+.music a {
+    color: #fda835;
+    text-decoration: none;
+    font-size: 8px;
+}
+
+#saturn h3 {
+    margin-top: 30px;
+}

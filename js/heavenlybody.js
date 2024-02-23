@@ -4,7 +4,7 @@ class HeavenlyBody {
         this.name = name;
         this.id = this.name.toLowerCase();
 
-        this.scalefactor = 1079.6;
+        this.scalefactor = 1079.6 * 2;
         this.radius = radius / this.scalefactor;
         this.diameter = this.radius * 2
         this.orbit = (orbit * 92955807.3) / this.scalefactor;
@@ -14,16 +14,16 @@ class HeavenlyBody {
         this.icon = `img/icons/${this.id}.png`;
     }
 
+    drawWrapper() {
+        const top = `calc(${this.orbit - this.radius}px)`;
+        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${this.id}" style="top: ${top};"></div>`
+        $(".space").append(wrapperDOM);
+    }
+
     drawBody() {
-        let top = `calc(${this.orbit - this.radius}px)`;
-        let left = `calc(50vw - ${this.radius}px)`;
-        let planetDOM = `
-        <div id="${this.id}" class="planetwrap" style="top: ${top};">
-            <div class="planet"></div>
-        </div>
-        `
-        $(".space").append(planetDOM);
-        $(`#${this.id}>.planet`).css({
+        const left = `calc(50vw - ${this.radius}px)`;
+        $(`#${this.id}`).append(`<div class="body"></div>`);
+        $(`#${this.id}>.body`).css({
             // "background-image": `url(${this.picture})`,
             "background-color": `${this.color}`,
             "height": `${this.diameter}`,
@@ -37,19 +37,16 @@ class HeavenlyBody {
         $(`#${this.id}`).append(labelDOM);
     }
 
-    drawShortcut(size) {
-        let sidebarDOM = `<li class="${this.id} sidebarplanet">${this.name.charAt(0)}</li>`
+    drawShortcut() {
+        let sidebarDOM = `
+        <li class="sidebar-body ${this.id}" style="background:${this.color};">
+            ${this.name.charAt(0)}
+        </li>`
         $("#sidebar>ul").append(sidebarDOM);
-        $(`.${this.id}.sidebarplanet`).css({
-            "background-color": `${this.color}`,
-            "height": `${size}`,
-            "width": `${size}`,
-            "font-size": `${size}`
-        });
 
-        let element = this.id;
-        $(`.${this.id}.sidebarplanet`).click(function () {
-            let target = $(`#${element}`)
+        let id = this.id;
+        $(`.sidebar-body.${id}`).click(function () {
+            let target = $(`#${id}`)
             $('html').animate({
                 scrollTop: target.offset().top - ($(window).height() / 2.5)
             }, 2000);
