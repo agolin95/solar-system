@@ -16,7 +16,7 @@ class HeavenlyBody {
 
     drawWrapper() {
         const top = `calc(${this.orbit - this.radius}px)`;
-        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${this.id}" style="top: ${top};"></div>`
+        const wrapperDOM = `<div id="${this.id}" class="body-wrap" style="top: ${top};"></div>`
         $(".space").append(wrapperDOM);
     }
 
@@ -39,17 +39,19 @@ class HeavenlyBody {
 
     drawShortcut() {
         let sidebarDOM = `
-        <li class="sidebar-body ${this.id}" style="background:${this.color};">
+        <li class="sidebar-body" 
+        style="background:${this.color};"
+        onclick="teleport('${this.id}')">
             ${this.name.charAt(0)}
         </li>`
         $("#sidebar>ul").append(sidebarDOM);
-
-        let id = this.id;
-        $(`.sidebar-body.${id}`).click(function () {
-            let target = $(`#${id}`)
-            $('html').animate({
-                scrollTop: target.offset().top - ($(window).height() / 2.5)
-            }, 2000);
-        });
     }
+}
+
+
+function teleport(id) {
+    let target = $(`#${id}`)
+    $('html').animate({
+        scrollTop: target.offset().top - ($(window).height() / 2.5)
+    }, 2000);
 }
