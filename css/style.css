@@ -37,12 +37,15 @@ body {
 
 .space {
     position: absolute;
+    scroll-snap-type: y mandatory;
 }
 
 
 .body-wrap {
     width: 100vw;
     position: absolute;
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
 }
 
 .body-wrap>.body {
@@ -54,6 +57,7 @@ body {
     font-weight: 100;
     font-size: 80px;
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .moon>h3 {
