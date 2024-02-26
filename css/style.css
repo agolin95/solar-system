@@ -51,6 +51,9 @@ body {
 .body-wrap>.body {
     border-radius: 100%;
     position: relative;
+}
+
+.planet>.body {
     outline: solid black 5px;
 }
 
@@ -58,6 +61,7 @@ body {
     width: 100vw;
     height: 1px;
     border-radius: 0%;
+    z-index: -1;
 }
 
 
@@ -68,13 +72,13 @@ body {
     margin-bottom: 0px;
 }
 
-.moon>h3,
-.boundary>h3 {
-    font-size: 30px;
+.moon>h3 {
+    font-size: 25px;
 }
 
 .boundary>h3 {
-    margin-top: -50px;
+    margin-top: -80px;
+    font-size: 50px;
 }
 
 #bow-shock {

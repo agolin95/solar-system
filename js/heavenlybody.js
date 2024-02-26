@@ -4,7 +4,7 @@ class HeavenlyBody {
         this.name = name;
         this.id = this.name.toLowerCase();
 
-        this.scalefactor = 1737.5;
+        this.scalefactor = 1737.5 / 1.5;
         this.radius = radius / this.scalefactor;
         this.diameter = this.radius * 2
         this.orbit = (orbit * 92955807.3) / this.scalefactor;
