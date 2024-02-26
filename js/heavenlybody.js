@@ -3,6 +3,7 @@ class HeavenlyBody {
     constructor(name, radius, orbit, color) {
         this.name = name;
         this.id = this.name.toLowerCase();
+        this.type = "body";
 
         this.scalefactor = 1737.5;
         this.radius = radius / this.scalefactor;
@@ -14,9 +15,16 @@ class HeavenlyBody {
         this.icon = `img/icons/${this.id}.png`;
     }
 
-    drawWrapper(type) {
+    draw() {
+        this.drawWrapper();
+        this.drawBody();
+        this.drawLabel();
+        this.drawShortcut();
+    }
+
+    drawWrapper() {
         const top = this.orbit - this.radius;
-        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${type}" style="top: ${top}px;"></div>`
+        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${this.type}" style="top: ${top}px;"></div>`
         $(".space").append(wrapperDOM);
     }
 
@@ -38,16 +46,18 @@ class HeavenlyBody {
         $(`#${this.id}`).append(labelDOM);
     }
 
-    drawShortcut(type) {
+    drawShortcut() {
         const orbit = this.orbit;
         const sidebarDOM = `
-        <li class="sidebar-body ${type}" 
+        <li id="sidebar-${this.id}"
+        class="sidebar-body ${this.type}" 
         style="background:${this.color};"
         onclick="teleport('${this.id}')"
         data-orbit="${orbit}">
             ${this.name.charAt(0)}
         </li>`
 
+        const name = this.name;
         const sidebarItems = $("#sidebar>ul>li");
         if (sidebarItems.length > 0) {
             sidebarItems.each(function () {
@@ -57,7 +67,9 @@ class HeavenlyBody {
                     return false;
                 }
             });
-            $("#sidebar>ul").append(sidebarDOM);
+            if ($("#sidebar>ul").find($(`#sidebar-${this.id}`)).length == 0) {
+                $("#sidebar>ul").append(sidebarDOM);
+            }
         }
         else { $("#sidebar>ul").append(sidebarDOM); }
     }
