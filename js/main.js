@@ -48,4 +48,11 @@ $(function () {
     });
 
 
+    // Sidebar Controls
+    $("#sidebar>.controls>div").on("click", function () {
+        $("#sidebar>ul").toggle();
+        $("#sidebar>.controls>div").toggle();
+    });
+
+
 });
