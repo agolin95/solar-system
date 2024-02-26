@@ -227,7 +227,7 @@ const boundaries = {
         "orbit": 3.3
     },
     "Kuiper-Belt-Start": {
-        "orbit": 30
+        "orbit": 30.07
     },
     "Kuiper-Belt-End": {
         "orbit": 50
