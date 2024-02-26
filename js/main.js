@@ -27,7 +27,7 @@ $(function () {
         for (const [k, v] of Object.entries(value)) {
             const orbitInAU = v["semi-major-axis"] / 149597871;
             const planet = planets[key] || dwarves[key];
-            const moon = new Moon(key, v["radius"], planet["orbit"] - orbitInAU, "#c0bebf");
+            const moon = new Moon(k, v["radius"], planet["orbit"] - orbitInAU, "#c0bebf");
             moon.draw();
         }
     }
