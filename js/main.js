@@ -95,8 +95,8 @@ $(function () {
     // let sedna = new Dwarf("Sedna", 995, 506, "#ccc").draw();
 
     let heliosheath = new Boundary("Heliosheath", 0, 90, "white").draw();
-    let heliopause = new Boundary("Heliopause", 0, 150, "white").draw();
-    let bowshock = new Boundary("Bow-Shock", 0, 250, "white").draw();
+    // let heliopause = new Boundary("Heliopause", 0, 150, "white").draw();
+    // let bowshock = new Boundary("Bow-Shock", 0, 250, "white").draw();
 
     $(".music-control").on("click", function () {
         const elem = document.getElementById("nightbus");
