@@ -39,13 +39,27 @@ class HeavenlyBody {
     }
 
     drawShortcut(type) {
-        let sidebarDOM = `
+        const orbit = this.orbit;
+        const sidebarDOM = `
         <li class="sidebar-body ${type}" 
         style="background:${this.color};"
-        onclick="teleport('${this.id}')">
+        onclick="teleport('${this.id}')"
+        data-orbit="${orbit}">
             ${this.name.charAt(0)}
         </li>`
-        $("#sidebar>ul").append(sidebarDOM);
+
+        const sidebarItems = $("#sidebar>ul>li");
+        if (sidebarItems.length > 0) {
+            sidebarItems.each(function () {
+                if (orbit > $(this).attr('data-orbit')) { return; }
+                else {
+                    $(sidebarDOM).insertBefore($(this));
+                    return false;
+                }
+            });
+            $("#sidebar>ul").append(sidebarDOM);
+        }
+        else { $("#sidebar>ul").append(sidebarDOM); }
     }
 }
 

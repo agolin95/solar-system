@@ -17,7 +17,7 @@ $(function () {
 
     // Draw Dwarves
     for (const [key, value] of Object.entries(dwarves)) {
-        const dwarf = new Dwarf(key, value["radius"], value["orbit"], "#ccc");
+        const dwarf = new Dwarf(key, value["radius"], value["orbit"]);
         dwarf.draw();
     }
 
@@ -27,7 +27,7 @@ $(function () {
         for (const [k, v] of Object.entries(value)) {
             const orbitInAU = v["semi-major-axis"] / 149597871;
             const planet = planets[key] || dwarves[key];
-            const moon = new Moon(k, v["radius"], planet["orbit"] - orbitInAU, "#c0bebf");
+            const moon = new Moon(k, v["radius"], planet["orbit"] - orbitInAU);
             moon.draw();
         }
     }
@@ -35,7 +35,7 @@ $(function () {
 
     // Draw Boundaries
     for (const [key, value] of Object.entries(boundaries)) {
-        const boundary = new Boundary(key, 0, value["orbit"], "white");
+        const boundary = new Boundary(key, value["orbit"]);
         boundary.draw();
     }
 
@@ -46,4 +46,6 @@ $(function () {
         elem.paused ? elem.play() : elem.pause();
         $(".music-control").toggle();
     });
+
+
 });

@@ -13,8 +13,8 @@ class Planet extends HeavenlyBody {
 
 
 class Moon extends HeavenlyBody {
-    constructor(name, radius, orbit, color) {
-        super(name, radius, orbit, color);
+    constructor(name, radius, orbit) {
+        super(name, radius, orbit, "#c0bebf");
     }
 
     draw() {
@@ -26,8 +26,8 @@ class Moon extends HeavenlyBody {
 
 
 class Dwarf extends HeavenlyBody {
-    constructor(name, radius, orbit, color) {
-        super(name, radius, orbit, color);
+    constructor(name, radius, orbit) {
+        super(name, radius, orbit, "#ccc");
     }
     draw() {
         this.drawWrapper("dwarf");
@@ -49,8 +49,8 @@ class Ring extends HeavenlyBody {
 }
 
 class Boundary extends HeavenlyBody {
-    constructor(name, radius, orbit, color) {
-        super(name, radius, orbit, color);
+    constructor(name, orbit) {
+        super(name, 0, orbit, "white");
     }
 
     draw() {
@@ -65,13 +65,5 @@ class Boundary extends HeavenlyBody {
         $(`#${this.id}>.body`).css({
             "background-color": `${this.color}`,
         });
-    }
-
-    drawShortcut(type) {
-        let sidebarDOM = `
-        <li class="sidebar-body ${type}" 
-        style="background:${this.color};"
-        onclick="teleport('${this.id}')"></li>`
-        $("#sidebar>ul").append(sidebarDOM);
     }
 }
