@@ -1,18 +1,23 @@
 $(function () {
 
+    for (const [key, value] of Object.entries(planets)) {
+        let planet = new Planet(key, value["radius"], value["orbit"], value["color"]);
+        planet.draw();
+    }
+
     let moonColor = "#c0bebf";
 
-    let sun = new Planet("Sun", 695508, 0, "#fda835").draw();
+    // let sun = new Planet("Sun", 695508, 0, "#fda835").draw();
 
-    let mercury = new Planet("Mercury", 2439.7, .3871, "#ad8a6c").draw();
+    // let mercury = new Planet("Mercury", 2439.7, .3871, "#ad8a6c").draw();
 
-    let venus = new Planet("Venus", 6051.8, .7233, "#ca6b16").draw();
+    // let venus = new Planet("Venus", 6051.8, .7233, "#ca6b16").draw();
 
     let earthOrbit = 1;
-    let earth = new Planet("Earth", 6371, earthOrbit, "#38569a").draw();
+    // let earth = new Planet("Earth", 6371, earthOrbit, "#38569a").draw();
     let luna = new Moon("Luna", 1737.5, earthOrbit - 0.002569544, moonColor).draw();
 
-    let mars = new Planet("Mars", 3389.5, 1.5273, "#b92e1a").draw();
+    // let mars = new Planet("Mars", 3389.5, 1.5273, "#b92e1a").draw();
     // let phobos = new Moon("Phobos", 11, 1.5273626747, moonColor).draw();
     // let deimos = new Moon("Deimos", 6.2, 1.5274568418, moonColor).draw();
 
@@ -22,7 +27,7 @@ $(function () {
 
 
     let jupiterOrbit = 5.2028;
-    let jupiter = new Planet("Jupiter", 69911, jupiterOrbit, "#bc6328").draw();
+    // let jupiter = new Planet("Jupiter", 69911, jupiterOrbit, "#bc6328").draw();
     let io = new Moon("Io", 1821.6, jupiterOrbit - 0.002819559, moonColor).draw();
     let europa = new Moon("Europa", 1560.8, jupiterOrbit - 0.004486026, moonColor).draw();
     let ganymede = new Moon("Ganymede", 2634.1, jupiterOrbit - 0.007155182, moonColor).draw();
@@ -49,7 +54,7 @@ $(function () {
     let saturnringc = new Ring("Saturn-Ring-C", 92000, saturnOrbit, saturnRingColor).draw();
     let saturnringd = new Ring("Saturn-Ring-D", 74500, saturnOrbit, saturnRingColor).draw();
     let saturngap = new Ring("Saturn-Gap", 66900, saturnOrbit, "black").draw();
-    let saturn = new Planet("Saturn", 58232, saturnOrbit, "#fdca95").draw();
+    // let saturn = new Planet("Saturn", 58232, saturnOrbit, "#fdca95").draw();
     let titan = new Moon("Titan", 5149.46 / 2, saturnOrbit - 0.008167897, moonColor).draw();
     let rhea = new Moon("Rhea", 1527.6 / 2, saturnOrbit - 0.003524114, moonColor).draw();
     let iapetus = new Moon("Iapetus", 1468.6 / 2, saturnOrbit - 0.02380849, moonColor).draw();
@@ -59,7 +64,7 @@ $(function () {
     let mimas = new Moon("Mimas", 396.4 / 2, saturnOrbit - 0.001243333, moonColor).draw();
 
     let uranusOrbit = 19.1914;
-    let uranus = new Planet("Uranus", 25362, uranusOrbit, "#87d7de").draw();
+    // let uranus = new Planet("Uranus", 25362, uranusOrbit, "#87d7de").draw();
     let titania = new Moon("Titania", 1576.8 / 2, uranusOrbit - 0.002913878, moonColor).draw();
     let oberon = new Moon("Oberon", 1522.8 / 2, uranusOrbit - 0.00390059, moonColor).draw();
     let umbriel = new Moon("Umbriel", 1169.4 / 2, uranusOrbit - 0.001780106, moonColor).draw();
@@ -67,7 +72,7 @@ $(function () {
     let miranda = new Moon("Miranda", 471.6 / 2, uranusOrbit - 0.0008649187, moonColor).draw();
 
     let neptuneOrbit = 30;
-    let neptune = new Planet("Neptune", 24622, neptuneOrbit, "#446afc").draw();
+    // let neptune = new Planet("Neptune", 24622, neptuneOrbit, "#446afc").draw();
     let triton = new Moon("Triton", 2705.2 / 2, neptuneOrbit - 0.002371417, moonColor).draw();
 
 
@@ -78,9 +83,6 @@ $(function () {
     let plutoOrbit = 39.5294;
     let pluto = new Dwarf("Pluto", 1151, plutoOrbit, "#ccc").draw();
     // let charon = new Moon("Charon", 1212 / 2, plutoOrbit - 0.0001172209, moonColor).draw();
-
-
-
 
     let salacia = new Dwarf("Salacia", 854, 42.184, "#ccc").draw();
     let varuna = new Dwarf("Varuna", 668, 42.718, "#ccc").draw();

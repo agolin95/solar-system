@@ -5,6 +5,7 @@
     top: calc(10vh);
     padding: 10px;
     background: black;
+    z-index: 1000;
 }
 
 #sidebar p {

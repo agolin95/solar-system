@@ -1,56 +1,56 @@
 const planets = {
-    "sun": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Sun": {
+        "radius": 695508,
+        "orbit": 0,
+        "color": "#fda835"
 
     },
-    "mercury": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Mercury": {
+        "radius": 2439.7,
+        "orbit": 0.3871,
+        "color": "#ad8a6c"
 
     },
-    "venus": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Venus": {
+        "radius": 6051.8,
+        "orbit": 0.7233,
+        "color": "#ca6b16"
 
     },
-    "earth": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Earth": {
+        "radius": 6371,
+        "orbit": 1,
+        "color": "#38569a"
 
     },
-    "mars": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Mars": {
+        "radius": 3389.5,
+        "orbit": 1.5273,
+        "color": "#b92e1a"
 
     },
-    "jupiter": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Jupiter": {
+        "radius": 69911,
+        "orbit": 5.2028,
+        "color": "#bc6328"
 
     },
-    "saturn": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Saturn": {
+        "radius": 58232,
+        "orbit": 9.5388,
+        "color": "#fdca95"
 
     },
-    "uranus": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Uranus": {
+        "radius": 25362,
+        "orbit": 19.1914,
+        "color": "#87d7de"
 
     },
-    "neptune": {
-        "radius": ,
-        "semi-major-axis": ,
-        "color"
+    "Neptune": {
+        "radius": 24622,
+        "orbit": 30,
+        "color": "#446afc"
 
     }
 }
