@@ -73,7 +73,8 @@ body {
 }
 
 .moon>h3 {
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .boundary>h3 {
