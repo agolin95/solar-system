@@ -4,7 +4,7 @@ class HeavenlyBody {
         this.name = name;
         this.id = this.name.toLowerCase();
 
-        this.scalefactor = 1737.5 * 2;
+        this.scalefactor = 1737.5;
         this.radius = radius / this.scalefactor;
         this.diameter = this.radius * 2
         this.orbit = (orbit * 92955807.3) / this.scalefactor;
@@ -14,9 +14,9 @@ class HeavenlyBody {
         this.icon = `img/icons/${this.id}.png`;
     }
 
-    drawWrapper() {
+    drawWrapper(type) {
         const top = `calc(${this.orbit - this.radius}px)`;
-        const wrapperDOM = `<div id="${this.id}" class="body-wrap" style="top: ${top};"></div>`
+        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${type}" style="top: ${top};"></div>`
         $(".space").append(wrapperDOM);
     }
 
@@ -37,9 +37,9 @@ class HeavenlyBody {
         $(`#${this.id}`).append(labelDOM);
     }
 
-    drawShortcut() {
+    drawShortcut(type) {
         let sidebarDOM = `
-        <li class="sidebar-body" 
+        <li class="sidebar-body ${type}" 
         style="background:${this.color};"
         onclick="teleport('${this.id}')">
             ${this.name.charAt(0)}
