@@ -40,7 +40,7 @@ class Dwarf extends HeavenlyBody {
     }
 }
 
-class Rings extends HeavenlyBody {
+class Ring extends HeavenlyBody {
     constructor(name, radius, orbit, color) {
         super(name, radius, orbit, color);
     }
@@ -48,6 +48,6 @@ class Rings extends HeavenlyBody {
     draw() {
         this.drawWrapper();
         this.drawBody();
-        $(`.${this.id}`).addClass("rings");
+        $(`.${this.id}`).addClass("ring");
     }
 }

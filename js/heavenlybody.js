@@ -1,10 +1,10 @@
 class HeavenlyBody {
-    // radius in miles, orbit in AU
+    // radius in km, orbit in AU
     constructor(name, radius, orbit, color) {
         this.name = name;
         this.id = this.name.toLowerCase();
 
-        this.scalefactor = 1079.6 * 2;
+        this.scalefactor = 1737.5 * 2;
         this.radius = radius / this.scalefactor;
         this.diameter = this.radius * 2
         this.orbit = (orbit * 92955807.3) / this.scalefactor;
