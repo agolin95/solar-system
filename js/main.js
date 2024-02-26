@@ -9,13 +9,13 @@ $(function () {
     let earth = new Planet("Earth", 6371, 1.0000, "#38569a").draw();
     let moon = new Moon("Moon", 1737.5, 1.002569544, "#c0bebf").draw();
 
-    let mars = new Planet("Mars", 3389.5, 1.5273, "#ee6639").draw();
+    let mars = new Planet("Mars", 3389.5, 1.5273, "#b92e1a").draw();
     // let phobos = new Moon("Phobos", 11, 1.5273626747, "#c0bebf").draw();
     // let deimos = new Moon("Deimos", 6.2, 1.5274568418, "#c0bebf").draw();
 
     let ceres = new Dwarf("Ceres", 469.7, 2.76596, "#ccc").draw();
 
-    let jupiter = new Planet("Jupiter", 69911, 5.2028, "#503007").draw();
+    let jupiter = new Planet("Jupiter", 69911, 5.2028, "#bc6328").draw();
     let io = new Moon("Io", 1821.6, 5.205619, "#c0bebf").draw();
     let europa = new Moon("Europa", 1560.8, 5.20728469, "#c0bebf").draw();
     let ganymede = new Moon("Ganymede", 2634.1, 5.209955182, "#c0bebf").draw();
@@ -42,7 +42,7 @@ $(function () {
     let saturngap = new Ring("Saturn-Gap", 66900, saturnOrbit, "black").draw();
     let saturn = new Planet("Saturn", 58232, saturnOrbit, "#fdca95").draw();
 
-    let uranus = new Planet("Uranus", 25362, 19.1914, "#1b6889").draw();
+    let uranus = new Planet("Uranus", 25362, 19.1914, "#87d7de").draw();
 
     let neptune = new Planet("Neptune", 24622, 30.0611, "#446afc").draw();
 
