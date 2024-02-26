@@ -15,8 +15,8 @@ class HeavenlyBody {
     }
 
     drawWrapper(type) {
-        const top = `calc(${this.orbit - this.radius}px)`;
-        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${type}" style="top: ${top};"></div>`
+        const top = this.orbit - this.radius;
+        const wrapperDOM = `<div id="${this.id}" class="body-wrap ${type}" style="top: ${top}px;"></div>`
         $(".space").append(wrapperDOM);
     }
 

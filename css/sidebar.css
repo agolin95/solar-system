@@ -1,9 +1,10 @@
 #sidebar {
     position: fixed;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0px;
     text-align: left;
     top: calc(10vh);
     padding: 10px;
+    background: black;
 }
 
 #sidebar p {
@@ -37,6 +38,13 @@
     height: 5px;
     width: 5px;
     font-size: 5px;
+}
+
+.sidebar-body.boundary {
+    border-radius: 0px;
+    height: 3px;
+    width: 60%;
+    padding: 0px;
 }
 
 

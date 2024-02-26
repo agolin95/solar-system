@@ -63,7 +63,10 @@ $(function () {
 
     let gonggong = new Dwarf("Gonggong", 615, 67.5, "#ccc").draw();
     let eris = new Dwarf("Eris", 1163, 67.6681, "#ccc").draw();
-    let sedna = new Dwarf("Sedna", 995, 506, "#ccc").draw();
+    // let sedna = new Dwarf("Sedna", 995, 506, "#ccc").draw();
+
+    let heliosheath = new Boundary("Heliosheath", 0, 90, "white").draw();
+    let heliopause = new Boundary("Heliopause", 0, 150, "white").draw();
 
     $(".music-control").on("click", function () {
         const elem = document.getElementById("nightbus");

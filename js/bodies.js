@@ -57,6 +57,7 @@ class Boundary extends HeavenlyBody {
         this.drawWrapper("boundary");
         this.drawBody();
         this.drawLabel();
+        this.drawShortcut("boundary");
     }
 
     drawBody() {
@@ -64,5 +65,13 @@ class Boundary extends HeavenlyBody {
         $(`#${this.id}>.body`).css({
             "background-color": `${this.color}`,
         });
+    }
+
+    drawShortcut(type) {
+        let sidebarDOM = `
+        <li class="sidebar-body ${type}" 
+        style="background:${this.color};"
+        onclick="teleport('${this.id}')"></li>`
+        $("#sidebar>ul").append(sidebarDOM);
     }
 }
