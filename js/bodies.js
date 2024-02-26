@@ -47,3 +47,22 @@ class Ring extends HeavenlyBody {
         this.drawBody();
     }
 }
+
+class Boundary extends HeavenlyBody {
+    constructor(name, radius, orbit, color) {
+        super(name, radius, orbit, color);
+    }
+
+    draw() {
+        this.drawWrapper("boundary");
+        this.drawBody();
+        this.drawLabel();
+    }
+
+    drawBody() {
+        $(`#${this.id}`).append(`<div class="body"></div>`);
+        $(`#${this.id}>.body`).css({
+            "background-color": `${this.color}`,
+        });
+    }
+}

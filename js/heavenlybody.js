@@ -33,7 +33,8 @@ class HeavenlyBody {
     }
 
     drawLabel() {
-        let labelDOM = `<h3 style="color:${this.color};">${this.name}</h3>`;
+        let cleaned = this.name.replace(/-/g, " ");
+        let labelDOM = `<h3 style="color:${this.color};">${cleaned}</h3>`;
         $(`#${this.id}`).append(labelDOM);
     }
 

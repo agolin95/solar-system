@@ -7,13 +7,16 @@ $(function () {
     let venus = new Planet("Venus", 6051.8, .7233, "#ca6b16").draw();
 
     let earth = new Planet("Earth", 6371, 1.0000, "#38569a").draw();
-    let moon = new Moon("Moon", 1737.5, 1.002569544, "#c0bebf").draw();
+    let luna = new Moon("Luna", 1737.5, 1.002569544, "#c0bebf").draw();
 
     let mars = new Planet("Mars", 3389.5, 1.5273, "#b92e1a").draw();
     // let phobos = new Moon("Phobos", 11, 1.5273626747, "#c0bebf").draw();
     // let deimos = new Moon("Deimos", 6.2, 1.5274568418, "#c0bebf").draw();
 
+    let asteroidstart = new Boundary("Asteroid-Belt-Start", 0, 2.1, "white").draw();
     let ceres = new Dwarf("Ceres", 469.7, 2.76596, "#ccc").draw();
+    let asteroidend = new Boundary("Asteroid-Belt-End", 0, 3.3, "white").draw();
+
 
     let jupiter = new Planet("Jupiter", 69911, 5.2028, "#bc6328").draw();
     let io = new Moon("Io", 1821.6, 5.205619, "#c0bebf").draw();
@@ -44,11 +47,16 @@ $(function () {
 
     let uranus = new Planet("Uranus", 25362, 19.1914, "#87d7de").draw();
 
-    let neptune = new Planet("Neptune", 24622, 30.0611, "#446afc").draw();
+    let kuiperstart = new Boundary("Kuiper-Belt-Start", 0, 30, "white").draw();
+
+    let neptune = new Planet("Neptune", 24622, 30, "#446afc").draw();
 
     let pluto = new Dwarf("Pluto", 1151, 39.5294, "#ccc").draw();
     let haumea = new Dwarf("Haumea", 780, 43.335, "#ccc").draw();
     let makemake = new Dwarf("Makemake", 715, 45.791, "#ccc").draw();
+
+    let kuiperend = new Boundary("Kuiper-Belt-End", 0, 50, "white").draw();
+
     let eris = new Dwarf("Eris", 1163, 67.6681, "#ccc").draw();
 
     $(".music-control").on("click", function () {
