@@ -51,13 +51,19 @@ $(function () {
 
     let neptune = new Planet("Neptune", 24622, 30, "#446afc").draw();
 
+    let orcus = new Dwarf("Orcus", 917, 39.174, "#ccc").draw();
     let pluto = new Dwarf("Pluto", 1151, 39.5294, "#ccc").draw();
+    let salacia = new Dwarf("Salacia", 854, 42.184, "#ccc").draw();
+    let varuna = new Dwarf("Varuna", 668, 42.718, "#ccc").draw();
     let haumea = new Dwarf("Haumea", 780, 43.335, "#ccc").draw();
+    let quaoar = new Dwarf("Quaoar", 543, 43.694, "#ccc").draw();
     let makemake = new Dwarf("Makemake", 715, 45.791, "#ccc").draw();
 
     let kuiperend = new Boundary("Kuiper-Belt-End", 0, 50, "white").draw();
 
+    let gonggong = new Dwarf("Gonggong", 615, 67.5, "#ccc").draw();
     let eris = new Dwarf("Eris", 1163, 67.6681, "#ccc").draw();
+    let sedna = new Dwarf("Sedna", 995, 506, "#ccc").draw();
 
     $(".music-control").on("click", function () {
         const elem = document.getElementById("nightbus");
