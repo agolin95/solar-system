@@ -227,7 +227,7 @@ const boundaries = {
         "orbit": 3.3
     },
     "Kuiper-Belt-Start": {
-        "orbit": 30.07
+        "orbit": 30.0700001 // Just past Neptune
     },
     "Kuiper-Belt-End": {
         "orbit": 50
