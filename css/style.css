@@ -86,3 +86,8 @@ body {
 #heliosheath {
     padding-bottom: 50vh;
 }
+
+#ruler-container {
+    width: 20px;
+    float: right;
+}
